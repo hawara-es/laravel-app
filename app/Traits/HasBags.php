@@ -62,14 +62,21 @@ trait HasBags
     /**
      * Return the ids of a set of bags.
      *
-     * @param array $names
+     * @param array|null $names
      */
-    public function getBagIds(array $names)
+    public function getBagIds(array $names = null)
     {
-        $ids = [];
+        if (is_null($names)) {
+            $names = array_keys($this->bags);
+        }
 
+        $ids = [];
         foreach ($names as $name) {
-            $ids[$name] = $this->getBag($name)->get('id');
+            $id = $this->getBagId($name);
+
+            if ($id) {
+                $ids[$name] = $id;
+            }
         }
 
         return $ids;

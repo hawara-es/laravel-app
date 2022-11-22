@@ -4,7 +4,7 @@
     action-route="two-factor.login"
     verb="POST">
 
-    <x-form.errors />
+    <x-form.errors :errors="$errors" :ids="$getBagIds()" />
 
     <x-form.input
         label="Type your access code"
@@ -31,7 +31,7 @@
     action-route="two-factor.login"
     verb="POST">
 
-    <x-form.errors />
+    <x-form.errors :errors="$errors" :ids="$getBagIds()" />
 
     <x-form.input
         label="Use a recovery code"

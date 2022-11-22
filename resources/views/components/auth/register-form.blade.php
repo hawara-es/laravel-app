@@ -4,7 +4,7 @@
     action-route="register"
     method="POST">
 
-    <x-form.errors />
+    <x-form.errors :errors="$errors" :ids="$getBagIds()" />
 
     <x-form.input
         required autofocus autocomplete="name"

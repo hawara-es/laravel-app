@@ -4,7 +4,7 @@
     action-route="login"
     method="POST">
 
-    <x-form.errors />
+    <x-form.errors :errors="$errors" :ids="$getBagIds()" />
 
     <x-form.input
         required autofocus

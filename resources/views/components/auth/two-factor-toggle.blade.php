@@ -5,7 +5,7 @@
         action-route="two-factor.enable"
         verb="DELETE">
 
-        <x-form.errors />
+        <x-form.errors :errors="$errors" :ids="$getBagIds()" />
 
         <x-form.submit
             heroicon="shield-exclamation"
@@ -19,7 +19,7 @@
         action-route="two-factor.enable"
         method="POST">
 
-        <x-form.errors />
+        <x-form.errors :errors="$errors" :ids="$getBagIds()" />
 
         <x-form.submit
             heroicon="shield-check"

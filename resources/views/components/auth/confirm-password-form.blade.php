@@ -4,7 +4,7 @@
     action-route="password.confirm"
     method="POST">
 
-    <x-form.errors />
+    <x-form.errors :errors="$errors" :ids="$getBagIds()" />
 
     <x-form.input
         required

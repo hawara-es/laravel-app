@@ -4,6 +4,8 @@
     action-route="password.email"
     method="post">
 
+    <x-form.errors :errors="$errors" :ids="$getBagIds()" />
+
     <x-form.input
         required autofocus
         label="What's your email address?"
