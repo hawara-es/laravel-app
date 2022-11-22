@@ -4,6 +4,18 @@ use App\Providers\RouteServiceProvider;
 use Laravel\Fortify\Features;
 
 return [
+    /*
+    |--------------------------------------------------------------------------
+    | Password Confirm
+    |--------------------------------------------------------------------------
+    |
+    | By default, this Laravel application won't use a password confirmation
+    | field. Set this setting to `true` if you want to (re)enable it. Users
+    | will be promted their password twice during registration and password
+    | changes.
+    |
+    */
+    'use_password_confirm' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -139,7 +151,7 @@ return [
         Features::updatePasswords(),
         Features::twoFactorAuthentication([
             'confirm' => true,
-            'confirmPassword' => false,
+            'confirmPassword' => true,
         ]),
     ],
 

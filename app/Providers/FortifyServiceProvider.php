@@ -31,6 +31,8 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        self::registerViews();
+
         Fortify::createUsersUsing(CreateNewUser::class);
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
@@ -45,5 +47,16 @@ class FortifyServiceProvider extends ServiceProvider
         RateLimiter::for('two-factor', function (Request $request) {
             return Limit::perMinute(5)->by($request->session()->get('login.id'));
         });
+    }
+
+    private static function registerViews()
+    {
+        Fortify::loginView('auth.login');
+        Fortify::registerView('auth.register');
+        Fortify::confirmPasswordView('auth.confirm-password');
+        Fortify::requestPasswordResetLinkView('auth.forgot-password');
+        Fortify::resetPasswordView('auth.reset-password');
+        Fortify::twoFactorChallengeView('auth.two-factor-challenge');
+        Fortify::verifyEmailView('auth.verify-email');
     }
 }

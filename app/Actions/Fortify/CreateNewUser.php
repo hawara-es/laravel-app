@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
+use Laravel\Fortify\Rules\Password;
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -37,5 +38,18 @@ class CreateNewUser implements CreatesNewUsers
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
         ]);
+    }
+
+    /**
+     * Facilitate enabling and disabling the password confirmation
+     * field via configuration.
+     */
+    protected function passwordRules()
+    {
+        if (config('fortify.use_password_confirm')) {
+            return ['required', 'string', new Password, 'confirm'];
+        }
+
+        return ['required', 'string', new Password];
     }
 }
