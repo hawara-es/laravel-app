@@ -38,7 +38,7 @@ return [
 
         'backups' => [
             'driver' => 'local',
-            'root' => storage_path('backups'),
+            'root' => env('APP_BACKUPS_FOLDER', storage_path('backups')),
             'throw' => false,
         ],
 
