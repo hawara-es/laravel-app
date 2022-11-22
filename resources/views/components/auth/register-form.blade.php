@@ -8,6 +8,7 @@
 
     <x-form.input
         required autofocus autocomplete="name"
+        :id="$getBagId('name')"
         label="What's your name?"
         type="text"
         name="name"
@@ -15,6 +16,7 @@
 
     <x-form.input
         required autocomplete="email"
+        :id="$getBagId('email')"
         label="What's your email address?"
         type="email"
         name="email"
@@ -22,6 +24,7 @@
 
     <x-form.input
         required
+        :id="$getBagId('password')"
         label="Type your new password"
         type="password"
         name="password" />
@@ -29,6 +32,7 @@
     @if (config('fortify.use_password_confirm'))
         <x-form.input
             required
+            :id="$getBagId('password_confirmation')"
             label="Confirm your password"
             type="password"
             name="password_confirmation" />

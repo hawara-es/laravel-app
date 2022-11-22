@@ -10,13 +10,25 @@ class Input extends Component
     use HasBags;
 
     /**
+     * Input DOM id.
+     *
+     * @var string
+     */
+    public $id;
+
+    /**
      * Create the component instance.
      *
+     * @param string|null $id
      * @param array|null $bags
      * @return void
      */
-    public function __construct(array $bags = [])
+    public function __construct(string $id = null, array $bags = [])
     {
+        if ($id) {
+            $bags['input']['id'] = $id;
+        }
+
         $this->setBags($bags);
         $this->setAutoIds(['input']);
     }

@@ -8,6 +8,7 @@
 
     <x-form.input
         required
+        :id="$getBagId('password')"
         label="Type your new password"
         type="password"
         name="password" />

@@ -9,6 +9,7 @@
     <x-form.input
         required autofocus
         label="What's your email address?"
+        :id="$getBagId('email')"
         type="email"
         name="email"
         value="{{ old('email') }}" />

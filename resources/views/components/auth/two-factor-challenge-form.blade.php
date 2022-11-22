@@ -7,6 +7,7 @@
     <x-form.errors :errors="$errors" :ids="$getBagIds()" />
 
     <x-form.input
+        :id="$getBagId('code')"
         label="Type your access code"
         type="text"
         name="code" />
@@ -34,6 +35,7 @@
     <x-form.errors :errors="$errors" :ids="$getBagIds()" />
 
     <x-form.input
+        :id="$getBagId('recovery_code')"
         label="Use a recovery code"
         type="text"
         name="recovery_code" />
