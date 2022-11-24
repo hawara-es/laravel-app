@@ -1,7 +1,7 @@
 @if (auth()->user() && auth()->user()->two_factor_secret)
     <x-form
         class="auth-two-factor-toggle"
-        legend="Two factor authentication is currently enabled"
+        legend="Disable two factor authentication"
         action-route="two-factor.enable"
         verb="DELETE">
 
@@ -15,7 +15,7 @@
 @else
     <x-form
         class="auth-two-factor-toggle"
-        legend="Two factor authentication isn't currently enabled"
+        legend="Enable two factor authentication"
         action-route="two-factor.enable"
         method="POST">
 
