@@ -5,6 +5,7 @@ namespace App\Actions\Fortify;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\UpdatesUserPasswords;
+use Laravel\Fortify\Rules\Password;
 
 class UpdateUserPassword implements UpdatesUserPasswords
 {
@@ -29,5 +30,18 @@ class UpdateUserPassword implements UpdatesUserPasswords
         $user->forceFill([
             'password' => Hash::make($input['password']),
         ])->save();
+    }
+
+    /**
+     * Facilitate enabling and disabling the password confirmation
+     * field via configuration.
+     */
+    protected function passwordRules()
+    {
+        if (config('fortify.use_password_confirm')) {
+            return ['required', 'string', new Password, 'confirm'];
+        }
+
+        return ['required', 'string', new Password];
     }
 }
