@@ -26,6 +26,7 @@
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
                         <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                        <x-auth.logout />
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
@@ -55,6 +56,7 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                                    <x-auth.two-factor-toggle-form />
                                 </div>
                             </div>
                         </div>
@@ -65,7 +67,11 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    <x-auth.two-factor-toggle-form />
+                                    @if (session('status') == 'two-factor-authentication-enabled')
+                                        <div class="mb-4 font-medium text-sm">
+                                            Please finish configuring two factor authentication below.
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
