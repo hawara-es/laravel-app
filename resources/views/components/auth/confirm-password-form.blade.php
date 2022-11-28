@@ -15,6 +15,6 @@
 
     <x-form.submit
         heroicon="shield-check"
-        label="Register" />
+        label="Confirm" />
 
 </x-form>

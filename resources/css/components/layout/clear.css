@@ -1,0 +1,42 @@
+body.layout-clear {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+}
+
+body.layout-clear nav {
+    align-self: flex-end;
+}
+
+body.layout-clear nav,
+body.layout-clear footer {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+body.layout-clear main {
+    padding-left: 3em;
+    padding-right: 3em;
+    min-width: 128px;
+    max-width: 512px;
+}
+
+body.layout-clear nav,
+body.layout-clear footer {
+    display: flex;
+    flex-direction: row;
+    gap: .5em;
+    min-height: 2em;
+    align-items: center;
+}
+
+body.layout-clear nav {
+    justify-content: end;
+}
+
+body.layout-clear footer {
+    justify-content: center;
+}

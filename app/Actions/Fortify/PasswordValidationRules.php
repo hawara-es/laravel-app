@@ -13,6 +13,14 @@ trait PasswordValidationRules
      */
     protected function passwordRules()
     {
-        return ['required', 'string', new Password, 'confirmed'];
+        /**
+         * Facilitate enabling and disabling the password
+         * confirmation field via configuration.
+         */
+        if (config('fortify.use_password_confirm')) {
+            return ['required', 'string', new Password, 'confirm'];
+        }
+
+        return ['required', 'string', new Password];
     }
 }

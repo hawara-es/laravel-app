@@ -1,0 +1,23 @@
+.form,
+.form fieldset,
+.form fieldset > legend {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.form,
+.form > fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.form.in-line,
+.form.in-line > fieldset {
+    display: inline;
+}
+
+.form > fieldset > legend {
+    float: left;
+}

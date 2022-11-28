@@ -1,0 +1,43 @@
+:root {
+    --font-base-size: 20px;
+    --font-h1-size: calc(4 * var(--font-base-size));
+    --font-h2-size: calc(3.5 * var(--font-base-size));
+    --font-h3-size: calc(3 * var(--font-base-size));
+    --font-h4-size: calc(2.5 * var(--font-base-size));
+    --font-h5-size: calc(2 * var(--font-base-size));
+    --font-h6-size: calc(1.5 * var(--font-base-size));
+}
+
+body {
+    font-size: var(--font-base-size);
+}
+
+h1 {
+    font-size: var(--font-h1-size);
+    font-weight: 300;
+}
+
+h2 {
+    font-size: var(--font-h2-size);
+    font-weight: 300;
+}
+
+h3 {
+    font-size: var(--font-h3-size);
+    font-weight: 300;
+}
+
+h4 {
+    font-size: var(--font-h4-size);
+    font-weight: 300;
+}
+
+h5 {
+    font-size: var(--font-h5-size);
+    font-weight: 300;
+}
+
+h6, legend {
+    font-size: var(--font-h6-size);
+    font-weight: 300;
+}

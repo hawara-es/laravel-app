@@ -1,3 +1,3 @@
-<x-html>
+<x-layout.clear>
     <x-auth.two-factor-challenge-form />
-</x-html>
+</x-layout.clear>

@@ -31,17 +31,4 @@ class UpdateUserPassword implements UpdatesUserPasswords
             'password' => Hash::make($input['password']),
         ])->save();
     }
-
-    /**
-     * Facilitate enabling and disabling the password confirmation
-     * field via configuration.
-     */
-    protected function passwordRules()
-    {
-        if (config('fortify.use_password_confirm')) {
-            return ['required', 'string', new Password, 'confirm'];
-        }
-
-        return ['required', 'string', new Password];
-    }
 }

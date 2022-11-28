@@ -1,11 +1,17 @@
 {{-- app/Views/Components/Form/Input.php --}}
 
-<fieldset
+<div
     {{ $getBag('fieldset')
-        ->merge(['class' => "form-input-" . $attributes->get('type')]) }}>
+        ->merge([
+            'class' => 'form-input-'.$attributes->get('type'),
+            'aria-labelledby' => 'label_'.$getBag('input')->get('id'),
+        ]) }}>
 
     <label {{ $getBag('label')
-        ->merge(['for' => $attributes->get('id')]) }}>
+        ->merge([
+            'for' => $getBag('input')->get('id'),
+            'id' => 'label_'.$getBag('input')->get('id'),
+        ]) }}>
 
         {{ $attributes->get('label') }}
     </label>
@@ -19,4 +25,4 @@
             ->merge($getBagAsArray('input'))
             ->except(['label']) }}>
     @endif
-</fieldset>
+</div>

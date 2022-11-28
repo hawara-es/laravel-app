@@ -39,17 +39,4 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password']),
         ]);
     }
-
-    /**
-     * Facilitate enabling and disabling the password confirmation
-     * field via configuration.
-     */
-    protected function passwordRules()
-    {
-        if (config('fortify.use_password_confirm')) {
-            return ['required', 'string', new Password, 'confirm'];
-        }
-
-        return ['required', 'string', new Password];
-    }
 }

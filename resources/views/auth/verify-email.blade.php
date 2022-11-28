@@ -1,3 +1,3 @@
-<x-html>
+<x-layout.clear>
     <x-auth.verify-email-form />
-</x-html>
+</x-layout.clear>

@@ -1,0 +1,10 @@
+.form-submit.button-as-link {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    font-family: var(--font-family-sans);
+    font-size: var(--font-base-size);
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,3 +1,3 @@
-<x-html>
+<x-layout.clear>
     <x-auth.login-form />
-</x-html>
+</x-layout.clear>

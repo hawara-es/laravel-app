@@ -1,0 +1,10 @@
+[class^="form-input"] {
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+    border: none;
+}
+
+.form-input-checkbox {
+    flex-direction: row;
+}

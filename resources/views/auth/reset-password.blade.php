@@ -1,3 +1,3 @@
-<x-html>
+<x-layout.clear>
     <x-auth.reset-password-form />
-</x-html>
+</x-layout.clear>

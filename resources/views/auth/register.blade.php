@@ -1,3 +1,3 @@
-<x-html>
+<x-layout.clear>
     <x-auth.register-form />
-</x-html>
+</x-layout.clear>
