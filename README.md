@@ -1,5 +1,9 @@
 # Skeleton for Laravel Applications
 
+This is the skeleton for a basic Laravel application with authentication, API, queues, broadcasting and development tools that speed up the implementation of new entities.
+
+It is in early development and it's still not ready for usage. Please check the [1.x milestone](https://github.com/hawara-es/laravel-app/milestone/1) for information about the road map.
+
 ## How to Install
 
 ### Download
