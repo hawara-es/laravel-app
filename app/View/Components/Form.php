@@ -2,17 +2,13 @@
 
 namespace App\View\Components;
 
+use App\Traits\HasBags;
 use Illuminate\View\Component;
 use Illuminate\Support\Facades\Route;
 
 class Form extends Component
 {
-    /**
-     * HTTP verb.
-     *
-     * @var string
-     */
-    public $verb;
+    use HasBags;
 
     /**
      * > Since HTML forms can't make PUT, PATCH, or
@@ -26,52 +22,28 @@ class Form extends Component
     public $_method;
 
     /**
-     * Form action attribute.
-     *
-     * @var string
-     */
-    public $action;
-
-    /**
-     * If provided, the action will be set to the
-     * URL corresponding to the `$actionRoute` route.
-     *
-     * @var string
-     */
-    public $actionRoute;
-
-    /**
-     * Form legend.
-     *
-     * @var string
-     */
-    public $legend;
-
-    /**
-     * Direction of fields.
-     *
-     * There are two valid values: col & row.
-     *
-     * @var string
-     */
-    public $direction;
-
-    /**
      * Create the component instance.
-     *
-     * @param string|null $verb
-     * @param string|null $action
-     * @param string|null $actionRoute
-     * @param string|null $direction
-     * @return void
      */
     public function __construct(
-        $verb = 'GET',
-        $action = null,
-        $actionRoute = null,
-        $legend = null,
-        $direction = 'col')
+        public ?string $id = null,
+        public ?string $verb = 'GET',
+        public ?string $action = null,
+        public ?string $actionRoute = null,
+        public ?string $legend = null,
+        public ?string $direction = 'col',
+        ?array $bags = [])
     {
+        if (! in_array($direction, ['col', 'row'])) {
+            throw new \InvalidArgumentException('Only col and row are valid values for the direction.');
+        }
+
+        if ($id) {
+            $bags['form']['id'] = $id;
+        }
+
+        $this->setBags($bags);
+        $this->setAutoIds(['form', 'fieldset', 'submit']);
+
         if (in_array($verb, ['PUT', 'PATCH', 'DELETE'])) {
             $this->verb = 'POST';
             $this->_method = $verb;
@@ -84,14 +56,6 @@ class Form extends Component
             $this->action = route($actionRoute);
         } else {
             $this->action = $action;
-        }
-
-        if (! is_null($legend)) {
-            $this->legend = $legend;
-        }
-
-        if (in_array($direction, ['col', 'row'])) {
-            $this->direction = $direction;
         }
     }
 

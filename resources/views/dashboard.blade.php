@@ -1,6 +1,4 @@
-<x-html>
-    <x-auth.nav />
-
+<x-layout.admin>
     <h1>This is your <span class="accented">home</span></h1>
 
     <h2><span class="accented">Security</span> settings</h2>
@@ -21,4 +19,4 @@
 
     <h4>QR code</h4>
     <x-auth.two-factor-qr-code />
-</x-html>
+</x-layout.admin>

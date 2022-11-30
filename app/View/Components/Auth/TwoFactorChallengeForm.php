@@ -5,7 +5,7 @@ namespace App\View\Components\Auth;
 use App\Traits\HasBags;
 use Illuminate\View\Component;
 
-class TwoFactorAuthenticationChallengeForm extends Component
+class TwoFactorChallengeForm extends Component
 {
     use HasBags;
 
@@ -28,6 +28,6 @@ class TwoFactorAuthenticationChallengeForm extends Component
      */
     public function render()
     {
-        return view('components.auth.two-factor-authentication-challenge-form');
+        return view('components.auth.two-factor-challenge-form');
     }
 }

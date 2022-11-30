@@ -4,7 +4,7 @@
     action-route="two-factor.login"
     verb="POST">
 
-    <x-form.errors :errors="$errors" :ids="$getBagIds()" />
+    <x-form.errors :errors="$errors" :ids="$getBagIds(['code'])" />
 
     <x-form.input
         :id="$getBagId('code')"
@@ -32,7 +32,7 @@
     action-route="two-factor.login"
     verb="POST">
 
-    <x-form.errors :errors="$errors" :ids="$getBagIds()" />
+    <x-form.errors :errors="$errors" :ids="$getBagIds(['recovery_code'])" />
 
     <x-form.input
         :id="$getBagId('recovery_code')"

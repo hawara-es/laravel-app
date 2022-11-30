@@ -1,17 +1,20 @@
-<nav {{ $attributes->merge([
+<x-menu.nav {{ $attributes->merge([
     'class' => 'auth-nav',
+    'aria-label' => 'Authentication menu'
 ]) }}>
-    <a href="{{ route('welcome') }}">Welcome</a>
     @if (Route::has('login'))
         @auth
-            <a href="{{ route('home') }}">Home</a>
-            <x-auth.logout />
+            @if (!Request::is('dashboard'))
+                <a class="nav-item" href="{{ route('dashboard') }}" tabindex="0">Dashboard</a>
+            @endif
+
+            <x-auth.logout-nav-item />
         @else
-            <a href="{{ route('login') }}">Log in</a>
+            <a class="nav-item" href="{{ route('login') }}" tabindex="0">Log in</a>
 
             @if (Route::has('register'))
-                <a href="{{ route('register') }}">Register</a>
+                <a class="nav-item" href="{{ route('register') }}" tabindex="0">Register</a>
             @endif
         @endauth
     @endif
-</nav>
+</x-menu.nav>

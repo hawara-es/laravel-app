@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', fn() => view('welcome'))
     ->name('welcome');
 
-Route::get('/home', fn() => view('home'))
+Route::get('/dashboard', fn() => view('dashboard'))
     ->middleware('verified')
-    ->name('home');
+    ->name('dashboard');

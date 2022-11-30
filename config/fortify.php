@@ -150,7 +150,11 @@ return [
         Features::updateProfileInformation(),
         Features::updatePasswords(),
         Features::twoFactorAuthentication([
-            'confirm' => true,
+
+            /* TODO: Implement 2FA confirmation
+               @link https://github.com/laravel/fortify/pull/358/files#diff-db1e34567c1a43b58e8996293f0b95a700b154007bc430692c0a1041e9f6b32eR71 */
+
+            /*'confirm' => true,*/
             'confirmPassword' => true,
         ]),
     ],

@@ -1,10 +1,21 @@
+.form-submit:hover {
+    cursor: pointer;
+}
+
 .form-submit.button-as-link {
     background: none!important;
     border: none;
     padding: 0!important;
     font-family: var(--font-family-sans);
     font-size: var(--font-base-size);
-    color: blue;
+    font-weight: 300;
+    color: black;
+    text-decoration: none;
+}
+
+.form-submit.button-as-link:hover,
+.form-submit.button-as-link:focus {
+    outline: none;
     text-decoration: underline;
-    cursor: pointer;
+    font-weight: 500;
 }

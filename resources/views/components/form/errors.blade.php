@@ -5,9 +5,11 @@
     <ul>
     @foreach ($errors->getBag('default')->keys() as $key)
         @foreach ($errors->getBag('default')->get($key) as $message)
-        <li role="alert">
-            <a href="#{{ $ids[$key] }}">{{ $message }}</a>
-        </li>
+            @if (array_key_exists($key, $ids))
+                <li role="alert">
+                    <a href="#{{ $ids[$key] }}">{{ $message }}</a>
+                </li>
+            @endif
         @endforeach
     @endforeach
     </ul>

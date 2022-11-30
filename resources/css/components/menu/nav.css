@@ -1,0 +1,29 @@
+.menu-nav .nav-item {
+    color: black;
+    padding: 1em;
+    text-decoration: none;
+}
+
+.menu-nav .nav-item:focus,
+.menu-nav .nav-item:hover {
+    outline: none;
+    background-color: #eee;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.menu-nav.top-anchor .nav-item:first-child {
+    border-bottom-left-radius: 1em;
+}
+
+.menu-nav.top-anchor .nav-item:last-child {
+    border-bottom-right-radius: 1em;
+}
+
+.menu-nav.bottom-anchor .nav-item:first-child {
+    border-top-left-radius: 1em;
+}
+
+.menu-nav.bottom-anchor .nav-item:last-child {
+    border-top-right-radius: 1em;
+}

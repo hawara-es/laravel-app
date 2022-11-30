@@ -1,4 +1,4 @@
-.layout-clear {
+.layout-admin {
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -7,31 +7,31 @@
     min-height: 100vh;
 }
 
-.layout-clear nav.global-menu {
+.layout-admin nav.global-menu {
     align-self: center;
 }
 
-@media only screen and (min-width: 512px) {
-    .layout-clear nav.global-menu {
+@media (min-width: 512px) {
+    .layout-admin nav.global-menu {
         align-self: flex-end;
     }    
 }
 
-.layout-clear nav,
-.layout-clear footer {
+.layout-admin nav,
+.layout-admin footer {
     padding-left: 1em;
     padding-right: 1em;
 }
 
-.layout-clear main {
+.layout-admin main {
     padding-left: 3em;
     padding-right: 3em;
-    min-width: 128px;
-    max-width: 512px;
+    min-width: 256px;
+    max-width: 1024px;
 }
 
-.layout-clear nav,
-.layout-clear footer {
+.layout-admin nav,
+.layout-admin footer {
     display: flex;
     flex-direction: row;
     gap: .5em;
@@ -39,10 +39,10 @@
     align-items: center;
 }
 
-.layout-clear nav {
+.layout-admin nav {
     justify-content: end;
 }
 
-.layout-clear footer {
+.layout-admin footer {
     justify-content: center;
 }

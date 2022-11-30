@@ -1,3 +1,5 @@
 @import 'fonts/all.css';
 @import 'components/layout/all.css';
+@import 'components/menu/all.css';
 @import 'components/form/all.css';
+@import 'components/auth/all.css';

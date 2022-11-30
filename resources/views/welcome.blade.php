@@ -1,3 +1,1 @@
-<x-html>
-    <x-auth.nav />
-</x-html>
+<x-layout.clear />
