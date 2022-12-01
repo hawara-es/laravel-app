@@ -34,7 +34,6 @@
 .layout-clear footer {
     display: flex;
     flex-direction: row;
-    gap: .5em;
     min-height: 2em;
     align-items: center;
 }

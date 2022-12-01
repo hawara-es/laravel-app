@@ -5,7 +5,7 @@
         class="auth-logout">
 
         <x-form.submit {{ $attributes->merge([
-                'class' => 'button-as-link nav-item',
+                'class' => 'nav-item',
             ]) }}
             heroicon="arrow-left-on-rectangle"
             tabindex="0"

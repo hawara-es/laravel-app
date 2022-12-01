@@ -1,12 +1,16 @@
 .menu-nav .nav-item {
+    outline: none;
+    background: none;
     color: black;
     padding: 1em;
     text-decoration: none;
+    border: none;
+    font-size: var(--font-base-size);
+    font-family: var(--font-family-sans);
 }
 
 .menu-nav .nav-item:focus,
 .menu-nav .nav-item:hover {
-    outline: none;
     background-color: #eee;
     text-decoration: underline;
     font-weight: 600;
@@ -20,10 +24,20 @@
     border-bottom-right-radius: 1em;
 }
 
+.menu-nav.top-anchor .nav-item:only-of-type {
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
 .menu-nav.bottom-anchor .nav-item:first-child {
     border-top-left-radius: 1em;
 }
 
 .menu-nav.bottom-anchor .nav-item:last-child {
+    border-top-right-radius: 1em;
+}
+
+.menu-nav.bottom-anchor .nav-item:only-of-type {
+    border-top-left-radius: 1em;
     border-top-right-radius: 1em;
 }
