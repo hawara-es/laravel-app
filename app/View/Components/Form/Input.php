@@ -19,8 +19,8 @@ class Input extends Component
     /**
      * Create the component instance.
      *
-     * @param string|null $id
-     * @param array|null $bags
+     * @param  string|null  $id
+     * @param  array|null  $bags
      * @return void
      */
     public function __construct(string $id = null, array $bags = [])

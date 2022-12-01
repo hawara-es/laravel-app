@@ -2,8 +2,8 @@
 
 namespace App\Traits;
 
-use Illuminate\View\ComponentAttributeBag;
 use Illuminate\Support\Str;
+use Illuminate\View\ComponentAttributeBag;
 
 trait HasBags
 {
@@ -15,12 +15,11 @@ trait HasBags
     /**
      * When asked about a known bag,
      * it will be returned,
-     *
      * when asked about an unknown bag,
      * an empty component attribute bag
      * will be returned instead.
      *
-     * @param string $name
+     * @param  string  $name
      */
     public function getBag(string $name)
     {
@@ -35,7 +34,7 @@ trait HasBags
      * Return a bag as it would be returned by
      * getBag, but converted to an array.
      *
-     * @param string $name
+     * @param  string  $name
      */
     public function getBagAsArray(string $name)
     {
@@ -52,7 +51,7 @@ trait HasBags
     /**
      * Return the id of a bag.
      *
-     * @param string $name
+     * @param  string  $name
      */
     public function getBagId(string $name)
     {
@@ -62,7 +61,7 @@ trait HasBags
     /**
      * Return the ids of a set of bags.
      *
-     * @param array|null $names
+     * @param  array|null  $names
      */
     public function getBagIds(array $names = null)
     {
@@ -88,16 +87,16 @@ trait HasBags
      * either a component attribute bag,
      * or an array.
      *
-     * @param array $bags
+     * @param  array  $bags
      */
     public function setBags(array $bags)
     {
         foreach($bags as $name => &$bag) {
-            if (is_array($bag)) {            
+            if (is_array($bag)) {
                 $bag = new ComponentAttributeBag($bag);
             }
 
-            if (!$bag instanceof ComponentAttributeBag) {
+            if (! $bag instanceof ComponentAttributeBag) {
                 continue;
             }
 
@@ -113,8 +112,8 @@ trait HasBags
     public function setAutoIds(array $names)
     {
         foreach ($names as $name) {
-            if (!isset($this->bags[$name]['id'])) {
-                $id = ['id' => "${name}_" . Str::lower(Str::random(3))];
+            if (! isset($this->bags[$name]['id'])) {
+                $id = ['id' => "${name}_".Str::lower(Str::random(3))];
 
                 if (isset($this->bags[$name])) {
                     $this->bags[$name] = $this->bags[$name]->merge($id);

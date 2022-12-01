@@ -15,10 +15,10 @@ use Laravel\Fortify\Features;
 |
 */
 
-Route::get('/', fn() => view('welcome'))
+Route::get('/', fn () => view('welcome'))
     ->name('welcome');
 
-Route::get('/dashboard', fn() => view('dashboard'))
+Route::get('/dashboard', fn () => view('dashboard'))
     ->middleware('verified')
     ->name('dashboard');
 

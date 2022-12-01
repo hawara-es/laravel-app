@@ -12,7 +12,7 @@ class LoginForm extends Component
     /**
      * Create the component instance.
      *
-     * @param array|null $bags
+     * @param  array|null  $bags
      * @return void
      */
     public function __construct(array $bags = [])

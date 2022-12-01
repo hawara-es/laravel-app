@@ -36,3 +36,26 @@ This application uses:
 | Laravel Fortify | **^1.14** | [laravel.com/docs/9.x/fortify](https://laravel.com/docs/9.x/fortify) | [github.com/laravel/fortify](https://github.com/laravel/fortify) |
 | Laravel Horizon | **^5.10** | [laravel.com/docs/9.x/horizon](https://laravel.com/docs/9.x/horizon) | [github.com/laravel/horizon](https://github.com/laravel/horizon) |
 | Laravel Backup | **^8.1** | [spatie.be/docs/laravel-backup/v8/](https://spatie.be/docs/laravel-backup/v8/) | [github.com/spatie/laravel-backup](https://github.com/spatie/laravel-backup) |
+
+## Code Contributing Guide
+
+For the development, this packages are used:
+
+| Dependency | Version | Documentation | Repository |
+| --- | --- | --- | --- |
+| Laravel Code Style | **^1.1** | [laravel-code-style/README.md](https://github.com/Jubeki/laravel-code-style/blob/main/README.md) | [jubeki/laravel-code-style](https://github.com/Jubeki/laravel-code-style) |
+| DOM Crawler | **^6.2** | [symfony.com/doc](https://symfony.com/doc/current/components/dom_crawler.html) | [symfony/dom-crawler](https://github.com/symfony/dom-crawler) |
+
+#### Code Style
+
+To run a check of Laravel's code style, use:
+
+```bash
+composer check
+```
+
+To apply the code style changes and fix the file, use:
+
+```bash
+composer fix
+```

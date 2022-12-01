@@ -19,6 +19,6 @@ class WebConfirmedTwoFactorAuthenticationController extends Controller
     {
         $confirm($request->user(), $request->input('code'));
 
-        return redirect('/dashboard');;
+        return redirect('/dashboard');
     }
 }

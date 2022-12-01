@@ -28,9 +28,9 @@ class Fieldset extends Component
     /**
      * Create the component instance.
      *
-     * @param string|null $legend
-     * @param string|null $direction
-     * @param array|null $bags
+     * @param  string|null  $legend
+     * @param  string|null  $direction
+     * @param  array|null  $bags
      * @return void
      */
     public function __construct($legend = null, $direction = 'col', array $bags = [])

@@ -3,8 +3,8 @@
 namespace App\View\Components;
 
 use App\Traits\HasBags;
-use Illuminate\View\Component;
 use Illuminate\Support\Facades\Route;
+use Illuminate\View\Component;
 
 class Form extends Component
 {
@@ -17,6 +17,7 @@ class Form extends Component
      * > verbs.
      *
      * @var string
+     *
      * @see https://laravel.com/docs/9.x/blade#forms
      */
     public $_method;
@@ -52,7 +53,7 @@ class Form extends Component
             $this->_method = null;
         }
 
-        if (!is_null($actionRoute) && Route::has($actionRoute)) {
+        if (! is_null($actionRoute) && Route::has($actionRoute)) {
             $this->action = route($actionRoute);
         } else {
             $this->action = $action;
