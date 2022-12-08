@@ -12,6 +12,7 @@
         "vite": "^3.0.0"
     },
     "dependencies": {
+        "heroicons": "^2.0.13",
         "normalize.css": "^8.0.1"
     }
 }
