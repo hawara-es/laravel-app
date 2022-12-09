@@ -10,5 +10,5 @@
 
     {{-- <x-icons.heroicon name="{{ $heroicon }}" /> --}}
 
-    <span>{{ $label }}</span>
+    {{ $label }}
 </button>

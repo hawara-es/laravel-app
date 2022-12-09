@@ -1,29 +1,30 @@
-@if (
-    /* A user is logged in */
-    Auth::user() &&
-    /* ... and has two factor enabled */
-    Auth::user()->two_factor_secret &&
-    /* ... but has not completed two factor confirmation */
-    !Auth::user()->two_factor_confirmed_at)
-    <x-form
-        class="auth-two-factor-confirm"
-        legend="Confirm Two Factor Authentication with an Access Code"
-        action-route="two-factor.web-confirm"
-        verb="POST">
+@if ($twoFactorIsEnabled())
 
-        <x-form.errors :errors="$errors" :ids="$getBagIds(['code'])" />
+@if( ! $twoFactorIsConfirmed())
+<section id="{{ $getBagId('help') }}">
+    <p>
+        To finish enabling Two Factor Authentication for your account,
+        check your One-Time-Password application for an access code
+        and type it below.
+    </p>
+</section>
+<x-form class="auth-two-factor-confirm" legend="Confirm with an Access Code" action-route="two-factor.web-confirm" verb="POST">
 
-        <x-form.input
-            :id="$getBagId('code')"
-            label="Type your access code"
-            type="text"
-            name="code" />
+    <x-form.errors :errors="$errors" :ids="$getBagIds(['code'])" />
 
-        <x-form.submit
-            heroicon="arrow-right-on-rectangle"
-            label="Login" />
+    <x-form.input :id="$getBagId('code')" label="Type your access code" type="text" name="code" />
 
-    </x-form>
-@else
-    Your Two Factor Authentication set up has been enabled successfully.
+    <x-form.submit heroicon="arrow-right-on-rectangle" label="Login" />
+
+</x-form>
+@endif
+
+@if ($twoFactorIsConfirmed())
+<section id="{{ $getBagId('help') }}">
+    <p>
+        Your account has two factor authentication enabled.
+    </p>
+</section>
+@endif
+
 @endif

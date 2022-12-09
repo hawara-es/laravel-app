@@ -3,11 +3,12 @@
 namespace App\View\Components\Auth;
 
 use App\Traits\HasBags;
+use App\Traits\TwoFactorAuthenticationAware;
 use Illuminate\View\Component;
 
 class TwoFactorConfirmForm extends Component
 {
-    use HasBags;
+    use HasBags, TwoFactorAuthenticationAware;
 
     /**
      * Create the component instance.
@@ -18,7 +19,7 @@ class TwoFactorConfirmForm extends Component
     public function __construct(array $bags = [])
     {
         $this->setBags($bags);
-        $this->setAutoIds(['code']);
+        $this->setAutoIds(['code', 'help']);
     }
 
     /**

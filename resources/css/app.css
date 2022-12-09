@@ -1,5 +1,10 @@
+@import 'reset.css';
 @import 'fonts/all.css';
 @import 'components/layout/all.css';
 @import 'components/menu/all.css';
 @import 'components/form/all.css';
-/*@import 'components/auth/all.css';*/
+@import 'components/auth/all.css';
+
+:root {
+    --accessible-menu-height: 44px;
+}

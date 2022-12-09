@@ -1,7 +1,7 @@
-<nav {{ $attributes->merge([
-    'class' => 'global-menu menu-nav',
+<x-menu.nav {{ $attributes->merge([
+    'class' => 'global-menu',
 ]) }}>
     {{ $slot }}
 
-    <x-auth.nav />
-</nav>
+    <x-auth.nav-items />
+</x-menu.nav>

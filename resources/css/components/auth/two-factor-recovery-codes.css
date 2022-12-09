@@ -1,0 +1,21 @@
+.auth-two-factor-recovery-codes {
+    margin-top: 2em;
+    padding: 1em;
+    border: 4px solid #eee;
+    border-radius: .5em;
+}
+
+.auth-two-factor-recovery-codes :is(h1, h2, h3, h4, h5, h6, legend) {
+    margin-top: 0;
+}
+
+.auth-two-factor-recovery-codes .recovery-codes {
+    padding: .5em;
+    border: 4px solid #eee;
+    border-radius: .5em;
+}
+
+.auth-two-factor-recovery-codes textarea.recovery-codes {
+    background: #eee;
+    outline: none;
+}

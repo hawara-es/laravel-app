@@ -4,7 +4,7 @@
     action-route="password.email"
     method="post">
 
-    <x-form.errors :errors="$errors" :ids="$getBagIds()" />
+    {{ session('status') }}
 
     <x-form.input
         required autofocus

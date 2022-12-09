@@ -1,11 +1,5 @@
 :root {
-    --font-base-size: 20px;
-    --font-h1-size: calc(4 * var(--font-base-size));
-    --font-h2-size: calc(3.5 * var(--font-base-size));
-    --font-h3-size: calc(3 * var(--font-base-size));
-    --font-h4-size: calc(2.5 * var(--font-base-size));
-    --font-h5-size: calc(2 * var(--font-base-size));
-    --font-h6-size: calc(1.5 * var(--font-base-size));
+    --font-base-size: 18px;
 }
 
 body {
@@ -13,31 +7,48 @@ body {
 }
 
 h1 {
-    font-size: var(--font-h1-size);
-    font-weight: 300;
+    font-size: calc(2.5 * var(--font-base-size));
+    font-weight: 600;
 }
 
 h2 {
-    font-size: var(--font-h2-size);
+    font-size: calc(2 * var(--font-base-size));
+    font-weight: 400;
+}
+
+h3, h4, h5, h6, legend {
+    font-size: calc(1.5 * var(--font-base-size));
     font-weight: 300;
 }
 
-h3 {
-    font-size: var(--font-h3-size);
-    font-weight: 300;
+h1, h2, h3, h4, h5, h6, legend {
+    margin-top: calc(1.25 * var(--font-base-size));
+    margin-bottom: calc(1.25 * var(--font-base-size));
 }
 
-h4 {
-    font-size: var(--font-h4-size);
-    font-weight: 300;
+input, textarea {
+    font-size: calc(1.25 * var(--font-base-size));
+    width: 100%;
+    font-weight: 400;
 }
 
-h5 {
-    font-size: var(--font-h5-size);
-    font-weight: 300;
+summary {
+    font-size: calc(1.25 * var(--font-base-size));
+    color: #aaa;
+    font-weight: 600;
 }
 
-h6, legend {
-    font-size: var(--font-h6-size);
-    font-weight: 300;
+summary:hover {
+    cursor: pointer;
+}
+
+button {
+    font-size: var(--font-base-size);
+    font-weight: 600;
+}
+
+@media only screen and (min-width: 512px) {
+    :root {
+        --font-base-size: 24px;
+    }
 }

@@ -1,47 +1,75 @@
+html {
+    height: 100%;
+    overflow-y: scroll;
+}
+
 .layout-admin {
+    display: grid;
+    min-height: 100%;
+    padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    border-bottom: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: 44px auto 1fr 44px;
+    grid-template-areas:
+        "global-menu"
+        "app-menu"
+        "main"
+        "footer";
     align-items: center;
-    min-height: 100vh;
 }
 
-.layout-admin nav.global-menu {
-    align-self: center;
-}
-
-@media (min-width: 512px) {
-    .layout-admin nav.global-menu {
-        align-self: flex-end;
-    }    
-}
-
-.layout-admin nav,
-.layout-admin footer {
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
-.layout-admin main {
-    padding-left: 3em;
-    padding-right: 3em;
-    min-width: 256px;
-    max-width: 1024px;
-}
-
-.layout-admin nav,
-.layout-admin footer {
+.layout-admin .global-menu {
+    grid-area: global-menu;
     display: flex;
     flex-direction: row;
-    min-height: 2em;
-    align-items: center;
+    justify-content: flex-end;
 }
 
-.layout-admin nav {
-    justify-content: end;
+.layout-admin .app-menu {
+    grid-area: app-menu;
+    min-height: 100%;
+    background-color: black;
+    color: white;
 }
 
-.layout-admin footer {
+.layout-admin .main {
+    grid-area: main;
+    min-height: 100%;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 2em;
+}
+
+.layout-admin .footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
+}
+
+/* menu */
+
+.layout-admin .app-menu ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+/* media queries */
+
+@media only screen and (min-width: 768px) {
+    .layout-admin {
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 44px auto 44px;
+        grid-template-areas:
+            "app-menu global-menu global-menu global-menu"
+            "app-menu main main main"
+            "app-menu footer footer footer";
+    }
+
+    .layout-admin .main {
+        padding-left: 4em;
+        padding-right: 4em;
+    }    
 }

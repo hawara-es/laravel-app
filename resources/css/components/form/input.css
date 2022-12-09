@@ -5,6 +5,54 @@
     border: none;
 }
 
+[class^="form-input"] input,
+[class^="form-input"] input:autofill {
+    background: white;
+    padding: .2em .4em .2em .4em;
+    border-radius: .2em;
+    border: 4px solid #ccc;
+}
+
+[class^="form-input"] input:active,
+[class^="form-input"] input:focus {
+    border: 4px solid black;
+    outline: 2px solid black;
+    outline-offset: 2px;
+}
+
+/* checkbox */
+
 .form-input-checkbox {
     flex-direction: row;
+    align-items: center;
 }
+
+.form-input-checkbox input[type=checkbox] {
+    display: grid;
+    place-content: center;
+	appearance: none;
+	width: 1em;
+	height: 1em;
+    border: 4px solid #ccc;
+}
+
+.form-input-checkbox input[type=checkbox]:focus,
+.form-input-checkbox input[type=checkbox]:active,
+.form-input-checkbox input[type=checkbox]:focus:checked,
+.form-input-checkbox input[type=checkbox]:active:checked {
+    border: 4px solid black;
+    outline: 2px solid black;
+    outline-offset: 2px;
+}
+
+.form-input-checkbox input[type=checkbox]:checked {
+    background-image: url("../../../../node_modules/heroicons/24/outline/x-mark.svg");
+    background-clip: border-box;
+    background-size: .8em .8em;
+    background-repeat: no-repeat;
+}
+
+.form-input-checkbox input[type=checkbox]:disabled {
+    color: gray;
+    cursor: not-allowed;
+  }

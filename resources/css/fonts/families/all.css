@@ -1,10 +1,16 @@
 @import 'fira-sans.css';
+@import 'trirong.css';
 
 :root {
-    --font-family-serif: Georgia, Garamond, serif;
+    --font-family-serif: Trirong, Georgia, Garamond, serif;
     --font-family-sans: Fira Sans, Arial, Helvetica, sans-serif;
 }
 
-body {
+body, input, button {
+    font-family: var(--font-family-sans);
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6, legend {
     font-family: var(--font-family-sans);
 }

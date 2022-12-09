@@ -22,6 +22,10 @@ Route::get('/dashboard', fn () => view('dashboard'))
     ->middleware('verified')
     ->name('dashboard');
 
+Route::get('/user/profile', fn () => view('auth.user-profile'))
+    ->middleware('auth')
+    ->name('user-profile');
+
 $twoFactorMiddleware = Features::optionEnabled(Features::twoFactorAuthentication(), 'confirmPassword')
     ? [config('fortify.auth_middleware', 'auth').':'.config('fortify.guard'), 'password.confirm']
     : [config('fortify.auth_middleware', 'auth').':'.config('fortify.guard')];

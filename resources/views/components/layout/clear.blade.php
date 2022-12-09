@@ -2,14 +2,14 @@
     'class' => 'layout-clear',
 ]) }}>
 
-    <x-auth.nav class="global-menu top-anchor" aria-label="Global menu" />
+    <x-menu.global class="top-anchor" aria-label="Global menu" />
 
-    <main role="main" aria-label="Main content">
+    <main class="main" role="main" aria-label="Main content">
         {{ $slot }}
     </main>
 
-    <footer role="footer" aria-label="Website footer">
-        <a href="#">Aviso legal</a>
+    <footer class="footer" role="footer" aria-label="Website footer">
+        <x-menu.footer class="bottom-anchor" aria-label="Footer menu" />
     </footer>
 
 </x-html>

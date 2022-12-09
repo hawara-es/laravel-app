@@ -2,16 +2,16 @@
     'class' => 'layout-admin',
 ]) }}>
 
-    <x-menu.global class="global-menu top-anchor" aria-label="Global menu" />
+    <x-menu.global class="top-anchor" aria-label="Global menu" />
 
-    <nav class="app-menu" aria-label="Application menu"></nav>
+    <x-menu.nav class="app-menu" aria-label="Application menu" />
 
-    <main>
+    <main class="main" aria-label="Page content">
         {{ $slot }}
     </main>
 
-    <footer>
-        <a href="#">Aviso legal</a>
+    <footer class="footer">
+        <x-menu.footer class="bottom-anchor" aria-label="Footer menu" />
     </footer>
 
 </x-html>

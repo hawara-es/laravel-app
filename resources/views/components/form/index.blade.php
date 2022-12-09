@@ -4,8 +4,7 @@
     'class' => 'form',
 ]) }}
     method="{{ $verb }}"
-    action="{{ $action }}"
-    aria-labelledby="legend_{{ $getBag('fieldset')->get('id') }}">
+    action="{{ $action }}">
 
     <fieldset {{ $getBag('fieldset') }}>
         @csrf
@@ -15,7 +14,7 @@
         @endif
 
         @if ($legend)
-            <legend id="legend_{{ $getBag('fieldset')->get('id') }}">{{ $legend }}</legend>
+            <legend>{{ $legend }}</legend>
         @endif
 
         {{ $slot }}

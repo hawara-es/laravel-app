@@ -2,13 +2,13 @@
     <x-form
         action-route="logout"
         method="POST"
-        class="auth-logout">
+        class="auth-logout-nav-item">
 
         <x-form.submit {{ $attributes->merge([
-                'class' => 'nav-item',
+                'class' => 'framed nav-item',
+                'tabindex' => 0,
             ]) }}
             heroicon="arrow-left-on-rectangle"
-            tabindex="0"
             label="Logout" />
 
     </x-form>

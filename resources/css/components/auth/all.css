@@ -1,1 +1,4 @@
-@import 'nav.css';
+@import 'logout-nav-item.css';
+@import 'two-factor-toggle-form.css';
+@import 'two-factor-qr-code.css';
+@import 'two-factor-recovery-codes.css';

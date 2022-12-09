@@ -27,6 +27,8 @@
         name="remember"
         label="Remember me" />
 
+    <a href="/forgot-password">Forgot your password?</a>
+
     <x-form.submit
         heroicon="arrow-right-on-rectangle"
         label="Login" />

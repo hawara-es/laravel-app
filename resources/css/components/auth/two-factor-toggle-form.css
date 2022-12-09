@@ -1,0 +1,10 @@
+.auth-two-factor-toggle-form legend {
+    margin-top: 0;
+}
+
+.auth-two-factor-toggle-form {
+    margin-top: 2em;
+    padding: 1em;
+    background: #eee;
+    border-radius: .5em;
+}

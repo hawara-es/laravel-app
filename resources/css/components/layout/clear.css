@@ -11,30 +11,21 @@
     align-self: center;
 }
 
-@media only screen and (min-width: 512px) {
-    .layout-clear nav.global-menu {
-        align-self: flex-end;
-    }    
-}
-
 .layout-clear nav,
 .layout-clear footer {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: calc( var(--accessible-menu-height) / 2 );
+    padding-right: calc( var(--accessible-menu-height) / 2 );
 }
 
 .layout-clear main {
-    padding-left: 3em;
-    padding-right: 3em;
-    min-width: 128px;
-    max-width: 512px;
+    padding: 1.5em;
 }
 
 .layout-clear nav,
 .layout-clear footer {
     display: flex;
     flex-direction: row;
-    min-height: 2em;
+    min-height: var(--accessible-menu-height);
     align-items: center;
 }
 

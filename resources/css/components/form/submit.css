@@ -1,3 +1,22 @@
-.form-submit:hover {
+.form-submit {
+    background-color: black;
+    color: white;
+    border: 4px solid black;
+    outline: none;
+    padding-bottom: .4em;
+    padding-top: .4em;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: 1.5em;
+    border-radius: .2em;
+    font-weight: 700;
+    width: fit-content;
+    align-self: flex-end;
+}
+
+.form-submit:hover,
+.form-submit:focus {
     cursor: pointer;
+    outline: 2px solid black;
+    outline-offset: 2px;
 }
