@@ -6,5 +6,7 @@
 @import 'components/auth/all.css';
 
 :root {
-    --accessible-menu-height: 44px;
+    --box-shadow: drop-shadow(8px 8px 10px #ddd);
+    --box-tiny-shadow: drop-shadow(4px 4px 5px #ddd);
+    --box-default-background: #eee;
 }

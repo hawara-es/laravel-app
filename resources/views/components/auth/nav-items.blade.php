@@ -8,7 +8,7 @@
             <a class="nav-item" href="{{ route('user-profile') }}" tabindex="0">Profile</a>
         @endif
 
-        <x-auth.logout-nav-item />
+        <x-auth.logout-form class="nav-item" />
     @else
         @if (Route::has('login') && !Request::is('login'))
             <a class="nav-item" href="{{ route('login') }}" tabindex="0">Log in</a>

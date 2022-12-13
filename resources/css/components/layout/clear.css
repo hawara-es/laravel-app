@@ -7,32 +7,6 @@
     min-height: 100vh;
 }
 
-.layout-clear nav.global-menu {
-    align-self: center;
-}
-
-.layout-clear nav,
-.layout-clear footer {
-    padding-left: calc( var(--accessible-menu-height) / 2 );
-    padding-right: calc( var(--accessible-menu-height) / 2 );
-}
-
 .layout-clear main {
     padding: 1.5em;
-}
-
-.layout-clear nav,
-.layout-clear footer {
-    display: flex;
-    flex-direction: row;
-    min-height: var(--accessible-menu-height);
-    align-items: center;
-}
-
-.layout-clear nav {
-    justify-content: end;
-}
-
-.layout-clear footer {
-    justify-content: center;
 }

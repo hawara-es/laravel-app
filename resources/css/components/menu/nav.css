@@ -1,22 +1,29 @@
+:root {
+    --menu-accessible-height: 44px;
+}
+
 .menu-nav {
-    --menu-nav-border-size: 4px;
-    --menu-nav-active-background-color: black;
-    padding-left: .5em;
-    padding-right: .5em;
+    --menu-active-background-color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .menu-nav .nav-item {
     display: inline-block;
     box-sizing: content-box;
-    min-width: var(--accessible-menu-height);
-    padding: .2em .7em .2em .7em;
-    outline: 1px transparent;
-    border: var(--menu-nav-border-size) solid rgba(255, 255, 255, 0);
+    width: calc(6 * var(--menu-accessible-height));
+    height: var(--menu-accessible-height);
+    line-height: var(--menu-accessible-height);
+    padding-top: .2em;
+    padding-bottom: .2em;
     background: none;
-    color: black;
+    color: #aaa;
     font-family: var(--font-family-sans);
+    font-size: .9em;
     font-weight: 400;
     text-decoration: none;
+    text-align: center;
 }
 
 /* submit buttons as menu items */
@@ -29,6 +36,9 @@
 
 .menu-nav form.form,
 .menu-nav form.form fieldset {
+    width: calc(6 * var(--menu-accessible-height));
+    height: var(--menu-accessible-height);
+    line-height: var(--menu-accessible-height);
     padding: 0;
 }
 
@@ -49,36 +59,27 @@
 
 .menu-nav.top-anchor,
 .menu-nav.bottom-anchor {
-    display: flex;
-    flex-direction: row;
     align-items: center;
-    height: var(--accessible-menu-height);
-}
-
-.menu-nav.top-anchor,
-.menu-nav.top-anchor .nav-item {
-    border-top: none;
-}
-
-.menu-nav.bottom-anchor,
-.menu-nav.bottom-anchor .nav-item {
-    border-bottom: none;
 }
 
 /* focus, hover */
 
 .menu-nav.top-anchor .nav-item:focus,
-.menu-nav.top-anchor .nav-item:hover {
-    border-bottom: var(--menu-nav-border-size) solid black;
-}
-
+.menu-nav.top-anchor .nav-item:hover,
 .menu-nav.bottom-anchor .nav-item:focus,
-.menu-nav.bottom-anchor .nav-item:hover {
-    border-top: var(--menu-nav-border-size) solid black;
-}
-
+.menu-nav.bottom-anchor .nav-item:hover,
 .menu-nav form.form button.framed:focus,
 .menu-nav form.form button.framed:hover {
+    background: var(--box-default-background);
     color: black;
+    filter: var(--box-tiny-shadow);
+    border-radius: .2em;
     outline: none;
+}
+
+@media only screen and (min-width: 512px) {
+    .menu-nav {
+        flex-direction: row;
+        justify-content: center;
+    }
 }

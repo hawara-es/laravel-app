@@ -26,7 +26,13 @@
     </p>
 </details>
 
-<x-form class="auth-two-factor-toggle-form" legend="Do you want to enable Two Factor authentication?" action-route="two-factor.enable" method="POST" aria-describedby="{{ $getBagId('help') }}">
+<x-form {{ $attributes->merge([
+    'class' => 'auth-two-factor-toggle-form',
+    'legend' => 'Do you want to enable Two Factor authentication?',
+    'action-route' => 'two-factor.enable',
+    'method' => 'POST',
+    'aria-describedby' => $getBagId('help'),
+]) }}>
 
     <x-form.errors :errors="$errors" :ids="$getBagIds()" />
 
@@ -44,7 +50,15 @@
     </p>
 </details>
 
-<x-form class="auth-two-factor-toggle-form" legend="Do you want to disable Two Factor authentication?" action-route="two-factor.enable" verb="DELETE" aria-describedby="{{ $getBagId('help') }}">
+<x-form
+    legend="Do you want to disable Two Factor authentication?"
+    action-route="two-factor.enable"
+    method="POST"
+    verb="DELETE"
+{{ $attributes->merge([
+    'class' => 'auth-two-factor-toggle-form',
+    'aria-describedby' => $getBagId('help'),
+]) }}>
 
     <x-form.errors :errors="$errors" :ids="$getBagIds()" />
 

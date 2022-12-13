@@ -1,16 +1,38 @@
 .auth-two-factor-qr-code {
-    margin-top: 2em;
-    padding: 1em;
-    gap: 0;
-    border: 4px solid #eee;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    gap: 2em;
+    background: var(--box-default-background);
     border-radius: .5em;
+    filter: var(--box-shadow);
+}
+
+.auth-two-factor-qr-code .description {
+    width: 100%;
+}
+
+.auth-two-factor-qr-code .code {
+    width: 208px;
+    height: 208px;
+    background: white;
+    border: 4px solid black;
+    border-radius: .5em;
+    padding: 4px;
+    align-self: center;
 }
 
 .auth-two-factor-qr-code :is(h1, h2, h3, h4, h5, h6, legend) {
     margin-top: 0;
 }
 
-.auth-two-factor-qr-code svg {
-    display: block;
-    margin: 2em auto 1em auto;
+@media only screen and (min-width: 768px) {
+    .auth-two-factor-qr-code {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .auth-two-factor-qr-code .description {
+        width: 75%;
+    }    
 }
