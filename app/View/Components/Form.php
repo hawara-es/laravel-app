@@ -27,7 +27,7 @@ class Form extends Component
      */
     public function __construct(
         public ?string $id = null,
-        public ?string $verb = 'GET',
+        public ?string $verb = 'get',
         public ?string $action = null,
         public ?string $actionRoute = null,
         public ?string $legend = null,
@@ -45,10 +45,10 @@ class Form extends Component
         $this->setBags($bags);
         $this->setAutoIds(['form', 'fieldset', 'submit']);
 
-        if (in_array($verb, ['PUT', 'PATCH', 'DELETE'])) {
-            $this->verb = 'POST';
+        if (in_array($verb, ['put', 'patch', 'delete'])) {
+            $this->verb = 'post';
             $this->_method = $verb;
-        } elseif (in_array($verb, ['GET', 'POST'])) {
+        } elseif (in_array($verb, ['get', 'post'])) {
             $this->verb = $verb;
             $this->_method = null;
         }

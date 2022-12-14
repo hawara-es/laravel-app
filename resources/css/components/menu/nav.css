@@ -11,13 +11,15 @@
 
 .menu-nav .nav-item {
     display: inline-block;
+    appearance: button;
     box-sizing: content-box;
-    width: calc(6 * var(--menu-accessible-height));
     height: var(--menu-accessible-height);
     line-height: var(--menu-accessible-height);
-    padding-top: .2em;
-    padding-bottom: .2em;
     background: none;
+    padding-bottom: .4em;
+    padding-top: .4em;
+    padding-left: 2em;
+    padding-right: 2em;
     color: #aaa;
     font-family: var(--font-family-sans);
     font-size: .9em;
@@ -36,10 +38,8 @@
 
 .menu-nav form.form,
 .menu-nav form.form fieldset {
-    width: calc(6 * var(--menu-accessible-height));
     height: var(--menu-accessible-height);
     line-height: var(--menu-accessible-height);
-    padding: 0;
 }
 
 .menu-nav form.form,
@@ -49,27 +49,20 @@
     margin: 0;
 }
 
+.menu-nav form.form button.nav-item {
+    width: 100%;
+}
+
 .menu-nav form.form button.nav-item.framed {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* top, bottom anchors */
-
-.menu-nav.top-anchor,
-.menu-nav.bottom-anchor {
-    align-items: center;
-}
-
 /* focus, hover */
 
-.menu-nav.top-anchor .nav-item:focus,
-.menu-nav.top-anchor .nav-item:hover,
-.menu-nav.bottom-anchor .nav-item:focus,
-.menu-nav.bottom-anchor .nav-item:hover,
-.menu-nav form.form button.framed:focus,
-.menu-nav form.form button.framed:hover {
+.menu-nav .nav-item:focus,
+.menu-nav .nav-item:hover {
     background: var(--box-default-background);
     color: black;
     filter: var(--box-tiny-shadow);

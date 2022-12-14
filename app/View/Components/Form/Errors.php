@@ -1,27 +1,26 @@
 <?php
 
-namespace App\View\Components\Auth;
+namespace App\View\Components\Form;
 
 use App\Traits\HasBags;
-use App\Traits\TwoFactorAuthenticationAware;
 use Illuminate\Support\ViewErrorBag;
 use Illuminate\View\Component;
 
-class ConfirmPasswordForm extends Component
+class Errors extends Component
 {
-    use HasBags, TwoFactorAuthenticationAware;
+    use HasBags;
 
     /**
      * Form errors to display.
      *
-     * @var Illuminate\Support\ViewErrorBag|null
+     * @var \Illuminate\Support\ViewErrorBag|null
      */
     public $errors;
 
     /**
      * Create the component instance.
      *
-     * @param  ViewErrorBag|null  $errors
+     * @param  \Illuminate\Support\ViewErrorBag|null  $errors
      * @param  array|null  $bags
      * @return void
      */
@@ -29,7 +28,6 @@ class ConfirmPasswordForm extends Component
     {
         $this->errors = $errors;
         $this->setBags($bags);
-        $this->setAutoIds(['password']);
     }
 
     /**
@@ -39,6 +37,6 @@ class ConfirmPasswordForm extends Component
      */
     public function render()
     {
-        return view('components.auth.confirm-password-form');
+        return view('components.form.errors');
     }
 }

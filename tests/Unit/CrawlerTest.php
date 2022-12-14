@@ -7,13 +7,11 @@ use Tests\AppTestCase as TestCase;
 class CrawlerTest extends TestCase
 {
     /**
-     * A basic test example:
-     * check that the crawler is
-     * working in the test environment.
+     * The crawler is working.
      *
      * @return void
      */
-    public function test_that_the_crawler_is_working()
+    public function test_the_crawler_is_working()
     {
         $this->crawl('<html><body></body></html>');
 

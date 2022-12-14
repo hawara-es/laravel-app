@@ -1,5 +1,3 @@
-{{-- src/Views/Components/Form.php --}}
-
 <form {{ $attributes->merge([
     'class' => 'form',
 ]) }}

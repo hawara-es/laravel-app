@@ -1,5 +1,5 @@
 <x-form
-    class="auth-forgot-password"
+    class="auth-forgot-password-form"
     legend="Forgot your password?"
     action-route="password.email"
     method="post">

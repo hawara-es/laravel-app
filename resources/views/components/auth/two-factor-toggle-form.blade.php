@@ -26,20 +26,33 @@
     </p>
 </details>
 
-<x-form {{ $attributes->merge([
+<x-form
+    legend="Do you want to enable Two Factor authentication?"
+    action-route="two-factor.enable"
+    method="POST"
+{{ $attributes->merge([
     'class' => 'auth-two-factor-toggle-form',
-    'legend' => 'Do you want to enable Two Factor authentication?',
-    'action-route' => 'two-factor.enable',
-    'method' => 'POST',
     'aria-describedby' => $getBagId('help'),
 ]) }}>
 
     <x-form.errors :errors="$errors" :ids="$getBagIds()" />
 
+    @if ( ! $confirmPasswordIsEnabled() or $passwordIsConfirmed() )
     <x-form.submit heroicon="shield-check" label="Enable" />
+    @endif
 
+    @if ( $confirmPasswordIsEnabled() and ! $passwordIsConfirmed() )
+    <p>
+        In order to enable Two Factor Authentication, you will have
+        to confirm your password.
+    </p>
+
+    <x-form.submit heroicon="shield-check" label="Confirm password" />
+    @endif
 </x-form>
-@else
+@endif
+
+@if ($twoFactorIsEnabled())
 <details id="{{ $getBagId('help') }}">
     <summary>Your account has two factor authentication enabled.</summary>
 

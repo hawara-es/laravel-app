@@ -1,8 +1,8 @@
 <x-form
-    class="auth-login"
+    class="auth-login-form"
     legend="Login by typing your credentials"
     action-route="login"
-    method="POST">
+    method="post">
 
     <x-form.errors :errors="$errors" :ids="$getBagIds()" />
 

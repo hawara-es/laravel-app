@@ -1,7 +1,7 @@
 @auth
     <x-form
         action-route="logout"
-        method="POST"
+        method="post"
         class="auth-logout-form">
 
         <x-form.submit {{ $attributes->merge([

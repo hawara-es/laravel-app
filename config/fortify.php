@@ -15,7 +15,7 @@ return [
     | changes.
     |
     */
-    'use_password_confirm' => false,
+    'use_password_confirm' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -151,7 +151,7 @@ return [
         Features::updatePasswords(),
         Features::twoFactorAuthentication([
             'confirm' => true,
-            'confirmPassword' => false,
+            'confirmPassword' => true,
         ]),
     ],
 

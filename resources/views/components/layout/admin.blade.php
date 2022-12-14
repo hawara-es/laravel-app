@@ -2,7 +2,7 @@
     'class' => 'layout-admin',
 ]) }}>
 
-    <x-menu.global class="top-anchor" aria-label="Global menu" />
+    <x-menu.global aria-label="Global menu" />
 
     <x-menu.nav class="app-menu" aria-label="Application menu" />
 

@@ -7,6 +7,24 @@
     min-height: 100vh;
 }
 
-.layout-clear main {
-    padding: 1.5em;
+.layout-clear .menu-nav {
+    margin-top: .5em;
+}
+
+.layout-clear .menu-nav,
+.layout-clear .main,
+.layout-clear .footer {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.layout-clear .footer {
+    margin-bottom: .5em;
+}
+
+@media only screen and (min-width: 768px) {
+    .layout-clear .menu-nav,
+    .layout-clear .main {
+        width: 600px;
+    }
 }

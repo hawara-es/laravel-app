@@ -20,22 +20,38 @@ html {
 
 .layout-admin .main {
     min-height: 100vh;
+    width: calc(100vw - 6em);
     display: flex;
     flex-direction: column;
-    gap: 2em;
-    margin: calc(var(--menu-accessible-height) + 4em) 2em 2em 2em;
+    gap: 1.618em;
+    margin-top: calc(2em + var(--menu-accessible-height));
 }
 
 .layout-admin .footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-top: 4em;
 }
 
-/* media queries */
+.layout-admin .menu-nav {
+    margin-top: .5em;
+}
+
+.layout-admin .menu-nav,
+.layout-admin .main,
+.layout-admin .footer {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.layout-admin .footer {
+    margin-bottom: .5em;
+}
 
 @media only screen and (min-width: 768px) {
+    .layout-admin .menu-nav,
     .layout-admin .main {
-        margin: calc(var(--menu-accessible-height) + 6em) 4em 4em 4em;
+        min-width: 600px;
     }
 }
