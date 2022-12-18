@@ -45,6 +45,12 @@ html {
     margin-right: 1em;
 }
 
+.layout-admin section {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
 .layout-admin .footer {
     margin-bottom: .5em;
 }

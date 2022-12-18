@@ -14,19 +14,3 @@ html {
 label:hover {
     cursor:pointer;
 }
-
-details > * {
-    padding-left: 2em;
-    padding-right: 2em;
-}
-
-details summary {
-    cursor: pointer;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-details p,
-details ul {
-    margin-top: 1em;
-}

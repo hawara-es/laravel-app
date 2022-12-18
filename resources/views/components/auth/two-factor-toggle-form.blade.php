@@ -1,30 +1,24 @@
 @if ( ! $twoFactorIsEnabled())
-<details id="{{ $getBagId('help') }}">
-    <summary>Your account does not have two factor authentication enabled.</summary>
+<section id="{{ $getBagId('help') }}">
+    <h3>Your account does not have two factor authentication enabled.</h3>
 
     <p>
-        This means that when you login you will be asked an email address and a password.
-        Once you provide the correct credentails your session is started.
+        Your account does not have two factor authentication enabled. When login
+        into this site, you will be asked to type your basic credentials. Usually
+        those will be your username or email address, and a password.
     </p>
 
     <p>
-        You can enhance the security of your account by enabling two factor authentication.
-        While enabling it you'll be shown a QR code.
-        Use it to configure a "One Time Password" application.
+        You can enhance the security of your account by enabling a second password.
+        Once activated, in order to log into your account, an extra "One-Time-Password"
+        will be needed.
     </p>
-
-    <p>Choose the one that you prefer. For instance, you could use:</p>
-
-    <ul>
-        <li><a href="https://getaegis.app">Aegis</a> for Android</li>
-        <li><a href="https://apps.apple.com/es/app/freeotp-authenticator/id872559395">FreeOTP</a> for iPhone</li>
-    </ul>
 
     <p>
-        After typing your email and password you'll be asked a unique code.
-        The application you chose will tell you what code to introduce every time.
+        Check out: <a href="https://getaegis.app">Aegis</a> if you use Android,
+        or <a href="https://apps.apple.com/es/app/freeotp-authenticator/id872559395">FreeOTP</a> if you use iPhone.
     </p>
-</details>
+</section>
 
 <x-form
     legend="Do you want to enable Two Factor authentication?"
@@ -53,15 +47,16 @@
 @endif
 
 @if ($twoFactorIsEnabled())
-<details id="{{ $getBagId('help') }}">
-    <summary>Your account has two factor authentication enabled.</summary>
+<section id="{{ $getBagId('help') }}">
+    <h3>Your account has two factor authentication enabled.</h3>
 
     <p>
-        This means that when you login you will be asked an email address and a password,
-        and ffter typing your email and password you'll be asked a unique code.
-        Your "One-Time-Code" application will tell you what code to introduce every time.
+        The security of your account has been improved by enabling a authentication
+        of two factors. Apart from your basic credentials, you'll be asked a second
+        code. Use the QR code below to configure your One Time Password
+        application.
     </p>
-</details>
+</section>
 
 <x-form
     legend="Do you want to disable Two Factor authentication?"

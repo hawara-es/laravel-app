@@ -15,7 +15,7 @@ return [
     | changes.
     |
     */
-    'use_password_confirm' => true,
+    'use_password_confirm' => false,
 
     /*
     |--------------------------------------------------------------------------
