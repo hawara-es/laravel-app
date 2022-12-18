@@ -1,45 +1,30 @@
 <?php
 
-namespace Tests\Unit\Components\Auth;
-
 use Illuminate\Support\Facades\Blade;
-use Tests\AppTestCase as TestCase;
+use Symfony\Component\DomCrawler\Crawler;
 
-class ForgotPasswordFormTest extends TestCase
-{
-    private function render() {
-        $result = Blade::render('<x-auth.forgot-password-form />');
-        $this->crawl($result);
-        return $this->crawler->filter('form.auth-forgot-password-form');
-    }
+beforeEach(function () {
+    $result = Blade::render('<x-auth.forgot-password-form />');
+    $this->crawler = new Crawler($result);
+    return $this->crawler->filter('form.auth-forgot-password');
+});
 
-    public function test_the_component_renders_a_form()
-    {
-        $form = $this->render();
-        $this->assertEquals(1, $form->count());
-    }
+test('The component renders a form', function () {
+    $this->assertEquals(1, $this->crawler->filter('form')->count());
+});
 
-    public function test_the_method_is_post()
-    {
-        $form = $this->render();
-        $this->assertEquals(1, $form->filter('[method=post]')->count());
-    }
+test('The form method is post', function () {
+    $this->assertEquals(1, $this->crawler->filter('[method=post]')->count());
+});
 
-    public function test_the_action_targets_user_confirm_password()
-    {
-        $form = $this->render();
-        $this->assertEquals(1, $form->filter('[action$="forgot-password"]')->count());
-    }
+test('The form action targets the forgot password route', function () {
+    $this->assertEquals(1, $this->crawler->filter('[action$="forgot-password"]')->count());
+});
 
-    public function test_the_form_has_a_submit_button()
-    {
-        $form = $this->render();
-        $this->assertEquals(1, $form->filter('button[type=submit]')->count());
-    }
+test('The form has an email field', function () {
+    $this->assertEquals(1, $this->crawler->filter('input[name=email]')->count());
+});
 
-    public function test_the_form_has_an_email_field()
-    {
-        $form = $this->render();
-        $this->assertEquals(1, $form->filter('input[name=email]')->count());
-    }
-}
+test('The form has a submit button', function () {
+        $this->assertEquals(1, $this->crawler->filter('button[type=submit]')->count());
+});

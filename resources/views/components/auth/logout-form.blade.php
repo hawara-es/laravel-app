@@ -1,4 +1,4 @@
-@auth
+@if (Auth::check() || $showToGuest)
     <x-form
         action-route="logout"
         method="post"
@@ -12,4 +12,4 @@
             label="Logout" />
 
     </x-form>
-@endauth
+@endif

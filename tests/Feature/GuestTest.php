@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class AnonymousTest extends TestCase
+class GuestTest extends TestCase
 {
     /**
      * Can see the welcome page.
